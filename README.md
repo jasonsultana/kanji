@@ -2,7 +2,7 @@
 
 This is a customised fork of https://github.com/jensechu/kanji. It's a small javascript powered site that takes in `.json` data of kanji and immediately renders those kanji on the page for printing kanji practice worksheets. The page title is also customisable, defined in the json data file.
 
-This application is used by ![Westside Japanese Lessons](http://www.westsidejapanese.com.au) for printing Kanji worksheets for our students.
+This application is used by <a href="http://www.westsidejapanese.com.au">Westside Japanese Lessons</a> for printing Kanji worksheets for our students.
 
 The main deviations from the original version are:
 * The removal of categories

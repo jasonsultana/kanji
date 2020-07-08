@@ -1,72 +1,47 @@
 <html>
   <head>
-    <title>Kanji Sheets</title>
+    <title>Westside Kanji Sheets</title>
     <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
+    <style>
+      .verticalcenter {
+          display: table-cell;
+          vertical-align: middle;
+          float: left;
+          margin-right: 10px;
+      }
+
+      .container h1 {
+        padding-top: 13.5px;
+      }
+    </style>
   </head>
   <body>
     <div id="container">
-
-      <header id="header">
-         <h1>Kanji Worksheets</h1>
-      </header> <!-- HEADER -->
+      <header class="container">
+        <div class="verticalcenter">
+          <img height="64" width="64" src="/images/logo-white.gif">
+        </div>
+        
+        <h1>Please import a data file</h1>
+        <div style="clear: both;"></div>
+      </header>
 
       <div id="kanjiSelectionBox">
+        <h3>Import a data file</h3>
+        <p>Data files must be placed withing the <b>data</b> folder.</p>
+
         <div class="categoryBox">
           <div class="settings">
-            <button class="kanjiSubmit">Go</button> <input type="text" placeholder="Search Kanji" class="kanjiSearch"/>
-            <div class="kanjiStrokes">
-              <span>Strokes:</span> <span class="strokeToggle">&nbsp;</span>
-            </div>
-          </div>
-          <div class="settings-content">
+            <button id="kanjiSubmit" class="kanjiSubmit">Import</button> 
+            <input id="kanjiDataFile" type="file" accept=".json" class="kanjiSearch" />
           </div>
         </div>
 
-        <div class="categoryBox" data-category="jlptn5">
-          <h2 class="category">JLPT N5</h2>
-          <div class="category-content expand">
-          </div>
-        </div>
-
-        <div class="categoryBox" data-category="jlptn4">
-          <h2 class="category">JLPT N4</h2>
-          <div class="category-content">
-          </div>
-        </div>
-
-        <div class="categoryBox" data-category="jlptn3">
-          <h2 class="category">JLPT N3</h2>
-          <div class="category-content">
-          </div>
-        </div>
-
-        <div class="categoryBox" data-category="jlptn2">
-          <h2 class="category">JLPT N2</h2>
-          <div class="category-content">
-          </div>
-        </div>
-
-        <div class="categoryBox" data-category="jlptn1">
-          <h2 class="category">JLPT N1</h2>
-          <div class="category-content">
-          </div>
-        </div>
-
-        <div class="categoryBox" data-category="wanikani">
-          <h2 class="category">Wani Kani</h2>
-          <div class="category-content">
-            <div class="wanikaniContent">
-              <p>Grab kanji from your <a href="http://www.wanikani.com">WaniKani</a> account! Just paste in your API Key from the <a href="https://www.wanikani.com/account"> Account</a> page.</p>
-              <input type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" class="inputWaniKaniUser"/>
-              <button class="submitWaniKaniUser">Sync</button>
-              <p>API Key is not saved or shared.</p>
-            </div>
-          </div>
-        </div>
-        <span class="author">made by <a href="https://twitter.com/jensechu">jensen</a> with &#9829;</span>
+        <span class="author">Made by <a href="https://twitter.com/jensechu">jensen</a> and Jason with &#9829;</span>
       </div> <!-- KANJI SELECTOR -->
 
       <div id="content" class="handwriting">
@@ -122,12 +97,9 @@
     </div> <!-- CONTAINER -->
 
     <script src="js/kanji.js"></script>
-    <script src="js/waniKani.js"></script>
-
 
     <script>
-      window.Kanji._load();
-      window.WaniKani.init();
+      window.Kanji._init();
     </script>
   </body>
 </html>
